@@ -64,13 +64,14 @@
 
     $app->post("/delete_clients", function() use ($app) {
         Client::deleteAll();
-        return $app['twig']->render('index.html.twig');
+        return $app['twig']->render('delete_client.html.twig');
     });
 
+    //Delete a Stylist
     $app->delete("/stylists/{id}", function($id) use ($app) {
         $stylist = Stylist::find($id);
         $stylist->delete();
-        return $app['twig']->render('index.html.twig', array('stylist' => Stylist::getAll()));
+        return $app['twig']->render('index.html.twig', array('stylists' => Stylist::getAll()));
     });
 
     return $app;

@@ -123,6 +123,27 @@
             $this->assertEquals([], $result);
         }
 
+        function test_deleteStylistClients()
+        {
+            //Arrange
+            $name = "Mary Johnson";
+            $id = null;
+            $test_stylist = new Stylist($name, $id);
+            $test_stylist->save();
+            
+            $name = "Howard";
+            $stylist_id = $test_stylist->getId();
+            $test_client = new Client($name, $id, $stylist_id);
+            $test_client->save();
+
+            //Act
+            Stylist::deleteAll();
+            $result = Stylist::getAll();
+
+            //Assert
+            $this->assertEquals([], $result);
+        }
+
         function test_find()
         {
             //Arrange

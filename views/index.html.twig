@@ -15,7 +15,7 @@
                 <h2>My Stylists</h2>
                 <div class='form-group'>
                     <form action="/stylists" method="post">
-                        <input id="name" name="name" type="text" placeholder="enter name">
+                        <input id="name" name="name" type="text" placeholder="Enter Stylist">
                         <hr>
                         <button type="submit" class="btn-primary btn-lg">Add Stylist</button>
                     </form>
@@ -31,11 +31,11 @@
                     {% endfor %}
                 </ul>
             {% else %}
-                <p>There are no stylists yet!</p>
+                <h4>There are no stylists yet!</h4>
             {% endif %}
             <br>
                 <form action='/delete_stylists' method='post'>
-                    <button type='submit' class="btn-primary btn-lg">Clear</button>
+                    <button type='submit' class="btn-primary btn-lg">Clear Stylists</button>
                 </form>
             </div>
         </div>
