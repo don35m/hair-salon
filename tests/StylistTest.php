@@ -128,10 +128,10 @@
             //Arrange
             $name = "Mary Johnson";
             $name2 = "Sue Smith";
-            $test_category = new Stylist($name);
-            $test_category->save();
-            $test_category2 = new Stylist($name2);
-            $test_category2->save();
+            $test_stylist = new Stylist($name);
+            $test_stylist->save();
+            $test_stylist2 = new Stylist($name2);
+            $test_stylist2->save();
 
             //Act
             $result = Stylist::find($test_stylist->getId());

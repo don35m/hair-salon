@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Stylist List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ stylist.getName }}</h1>
+        <h4><a href="/stylists/{{ stylist.getId }}/edit">Edit</a></h4>
+        <form action="/stylists/{{ stylist.getId }}" method="post">
+            <input name="_method" type="hidden" value="delete">
+
+            <button type="submit" class="btn-danger btn-lg">Delete this stylist</button>
+        </form>
+        {% if clients is not empty %}
+            <p>Here are the clients:</p>
+            <ul>
+            {% for client in clients %}
+                <h4>{{ client.getName }}</h4>
+            {% endfor %}
+            </ul>
+            <form action='/delete_clients' method='post'>
+                <button type='submit' class="btn-warning btn-lg">Clear</button>
+            </form>
+        {% endif %}
+        <hr>
+        <h4>Add Client</h4>
+        <form action='/clients' method='post'>
+            <input id="stylist_id" name="stylist_id" type="hidden" value="{{ stylist.getId() }}">
+            
+            <div class='form-group'>
+              <input id='name' name='name' type='text' placeholder="enter name">
+            </div>
+            <button type='submit' class="btn-primary btn-lg">Add Clients</button>
+        </form>
+    </div>
+</body>
+</html>
