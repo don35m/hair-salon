@@ -9,6 +9,7 @@
     <div class="container">
         <h1>{{ stylist.getName }}</h1>
         <h4><a href="/stylists/{{ stylist.getId }}/edit">Edit Stylist</a></h4>
+        
         <form action="/stylists/{{ stylist.getId }}" method="post">
             <input name="_method" type="hidden" value="delete">
 

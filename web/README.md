@@ -22,6 +22,7 @@ _Uses a database to inventory a hair salons stylists and keep track of their cli
 * USE hair_salon;
 * CREATE TABLE stylists (id serial PRIMARY KEY, name varchar (255));
 * Copy hair_salon in MYAdmin and name hair_salon_test
+* CREATE Table clients (id serial Primary Key, name varchar (255), stylist_id int);
 
 ## Technologies Used
 
