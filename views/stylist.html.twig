@@ -14,11 +14,11 @@
 
             <button type="submit" class="btn-danger btn-lg">Delete this stylist</button>
         </form>
-        {% if stylists is not empty %}
-            <h4>Here are the Stylists:</h4>
+        {% if clients is not empty %}
+            <h4>Here are the Clients:</h4>
             <ul>
-            {% for stylist in stylists %}
-                <h4>{{ stylist.getName }}</h4>
+            {% for client in clients %}
+                <h4>{{ client.getName }}</h4>
             {% endfor %}
             </ul>
             <form action='/delete_clients' method='post'>
